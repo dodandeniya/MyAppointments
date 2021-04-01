@@ -222,7 +222,7 @@ namespace IdentityServer.Data
 
                 user = userManager.Users.FirstOrDefaultAsync(x => x.UserName == "p1@myappoiments.com").Result;
 
-                userManager.AddToRoleAsync(user, Role.CompanyUser).Wait();
+                userManager.AddToRoleAsync(user, Role.PublicUser).Wait();
             }
         }
     }

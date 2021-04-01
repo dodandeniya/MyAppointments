@@ -5,8 +5,10 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using MyAppointments.Api.MediatR;
 using MyAppointments.Api.Swagger;
 using MyAppointments.Infrastructure.Middlewares;
+using MyAppointments.Persistence;
 using System;
 
 namespace MyAppointments.Api
@@ -25,6 +27,8 @@ namespace MyAppointments.Api
         {
 
             services.AddControllers();
+            services.AddEFConfigurations(Configuration);
+            services.AddMediatRConfiguration();
 
             var identityUrl = Configuration.GetValue<string>("IdentityServerUrl");
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
@@ -55,6 +59,8 @@ namespace MyAppointments.Api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors("default");
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

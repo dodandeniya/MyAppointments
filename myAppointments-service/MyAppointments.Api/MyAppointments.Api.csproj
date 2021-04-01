@@ -13,6 +13,10 @@
         <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.4" />
         <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.4">
+          <PrivateAssets>all</PrivateAssets>
+          <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
         <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
         <PackageReference Include="NSwag.AspNetCore" Version="13.10.8" />
     </ItemGroup>
@@ -21,6 +25,7 @@
         <ProjectReference Include="..\Common\Common.csproj" />
         <ProjectReference Include="..\MyAppointments.Application\MyAppointments.Application.csproj" />
         <ProjectReference Include="..\MyAppointments.Infrastructure\MyAppointments.Infrastructure.csproj" />
+        <ProjectReference Include="..\MyAppointments.Persistence\MyAppointments.Persistence.csproj" />
     </ItemGroup>
 
 </Project>

@@ -6,6 +6,6 @@ namespace MyAppointments.Application.Interfaces
 {
     public interface IAppointmentRepository : IRepository<Appointment>
     {
-        Task<List<Appointment>> GetByUserName(string userName);
+        public Task<IList<Appointment>> GetByUserName(string userName);
     }
 }

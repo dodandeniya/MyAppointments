@@ -10,7 +10,7 @@ namespace MyAppointments.Persistence
         {
         }
 
-        public virtual DbSet<Appointment> Countries { get; set; }
+        public virtual DbSet<Appointment> Appointments { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
