@@ -1,6 +1,7 @@
 import { Button } from "@material-ui/core";
 import React from "react";
 import { OpenIdService } from "../../core/services/openidService";
+import Title from "../../shared/title/Title";
 
 /* eslint-disable-next-line */
 export interface LoginScreenProps {}
@@ -14,8 +15,14 @@ export function LoginScreen() {
 
   return (
     <div>
-      <h1>Welcome to LoginScreen!</h1>
-      <Button onClick={(e) => onLoginButtonClick(e)}>Sign In</Button>
+      <Title>Login</Title>
+      <Button
+        onClick={(e) => onLoginButtonClick(e)}
+        variant="contained"
+        color="primary"
+      >
+        Sign In
+      </Button>
     </div>
   );
 }

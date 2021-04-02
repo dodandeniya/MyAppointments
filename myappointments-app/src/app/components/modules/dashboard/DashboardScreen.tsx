@@ -16,7 +16,7 @@ export default function DashboardScreen(props: IDashboardScreenProps) {
   ) as any;
 
   useEffect(() => {
-    if (appointments.myAppointments.length === 0) {
+    if (appointments.length === 0) {
       dispatch(getAllAppointmentsByName());
     }
   }, [dispatch, appointments]);
@@ -34,15 +34,16 @@ export default function DashboardScreen(props: IDashboardScreenProps) {
       <Title>Dash board</Title>
       <TitleMin>My Appointments</TitleMin>
 
-      {appointments.myAppointments.length > 0 && (
-        <TableView
-          canDelete
-          canEdit
-          data={appointments.myAppointments}
-          onEdit={handleEditItem}
-          onDelete={handleDeleteItem}
-        />
-      )}
+      {appointments.myAppointments &&
+        appointments.myAppointments.length > 0 && (
+          <TableView
+            canDelete
+            canEdit
+            data={appointments.myAppointments}
+            onEdit={handleEditItem}
+            onDelete={handleDeleteItem}
+          />
+        )}
     </div>
   );
 }
