@@ -22,7 +22,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Common\Common.csproj" />
         <ProjectReference Include="..\MyAppointments.Application\MyAppointments.Application.csproj" />
         <ProjectReference Include="..\MyAppointments.Infrastructure\MyAppointments.Infrastructure.csproj" />
         <ProjectReference Include="..\MyAppointments.Persistence\MyAppointments.Persistence.csproj" />
